@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{judul}} </title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static app_css %}">
+</head>
+<body>
+    {% comment %} <img id="banner" src="{% static banner %}" alt=""> {% endcomment %}
+    
+    <nav>
+        <ul>
+            <li>
+                <a href="/" title=""> Home </a>
+            </li>
+            <li>
+                <a href="/blog" title=""> Blog </a>
+            </li>
+            <li>
+                <a href="/category" title=""> Category </a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <h2> welcome in {{judul}} !!  </h2>
+    
+</body>
+</html>
