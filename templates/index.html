@@ -4,28 +4,66 @@
 <html>
 <head>
     <title> {{judul}} </title>
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static app_css %}">
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "app_css" %}">
+    
+    
 </head>
 <body>
-    {% comment %} <img id="banner" src="{% static banner %}" alt=""> {% endcomment %}
-    
-    <nav>
-        <ul>
-            <li>
-                <a href="/" title=""> Home </a>
-            </li>
-            <li>
-                <a href="/blog" title=""> Blog </a>
-            </li>
-            <li>
-                <a href="/category" title=""> Category </a>
-            </li>
-            
-        </ul>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"> Fan's Playlist </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog"> Blog </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/category" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/kdrama"> Kdrama </a></li>
+                  <li><a class="dropdown-item" href="/movies"> Movies </a></li>
+                  <li><a class="dropdown-item" href="/varietyshow"> Variety Show </a></li
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/varietyshow"> Variety Show </a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
     </nav>
 
-    <h2> welcome in {{judul}} !!  </h2>
+    {% comment %} <div class="container">
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/" title=""> Home </a>
+                </li>
+                <li>
+                    <a href="/blog" title=""> Blog </a>
+                </li>
+                <li>
+                    <a href="/category" title=""> Category </a>
+                </li>
+                
+            </ul>
+        </nav>
     
+    </div> {% endcomment %}
+    
+    <script src="{% static "vendor/jquery/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "vendor/popper/popper.js" %}" type="text/javascript"></script>
+    <script src="{% static "vendor/bootstrap/bootstrap.js" %}" type="text/javascript"></script>
+
 </body>
 </html>
