@@ -4,12 +4,11 @@
 <html>
 <head>
     <title> {{subjudul}} </title>
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static app_css %}">
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/bootstrap.css" %}">
 </head>
 <body>
 
-    <nav>
+    {% comment %} <nav>
         <ul>
             <li>
                 <a href="/" title=""> Home </a>
@@ -22,10 +21,57 @@
             </li>
             
         </ul>
+    </nav> {% endcomment %}
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"> Fan's Playlist </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog"> Blog </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/category" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/kdrama"> Kdrama </a></li>
+                  <li><a class="dropdown-item" href="/movies"> Movies </a></li>
+                  <li><a class="dropdown-item" href="/varietyshow"> Variety Show </a></li
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/varietyshow"> Variety Show </a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
     </nav>
 
     <h2> {{subjudul}} </h2>
     <p> My playlist : here's recently playlist (Kdrama, Movies, etc..) </p>
+
+    <form method='post'>
+        {% csrf_token %}
+        <table>
+            {{blog_form.as_table}}
+        </table>
+        <br>
+
+        <br><button type="Submit"> Post </button>
+    </form>
     
+    <h2> {{title}} </h2>
+
+    <script src="{% static "vendor/jquery/jquery.js" %}" type="text/javascript"></script>
+    <script src="{% static "vendor/popper/popper.js" %}" type="text/javascript"></script>
+    <script src="{% static "vendor/bootstrap/bootstrap.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/scrolling.js" %}" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
